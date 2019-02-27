@@ -15,7 +15,7 @@ public class Deck {
      * cards contains all the cards in the deck.
      */
     private List<Card> cards;
-    ArrayList aDeck = new ArrayList(6);
+    ArrayList<Card> aDeck = new ArrayList<Card>();
 
     /**
      * size is the number of not-yet-dealt cards.
@@ -80,6 +80,10 @@ public class Deck {
      */
     public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+        for(int i = 0; i < aDeck.size(); i++)
+        {
+
+        }
     }
 
     /**
@@ -89,7 +93,7 @@ public class Deck {
      */
     public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-        Card aCard = cards.get(size-1);
+        Card aCard = aDeck.get(size-1);
         size--;
         return aCard;
     }
