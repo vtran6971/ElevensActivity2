@@ -15,12 +15,16 @@ public class DeckTester {
         int[] value = {1, 2};
 
         Deck aDeck = new Deck(rank, suit, value);
-        System.out.println(aDeck);
         System.out.println(aDeck.isEmpty());
         System.out.println(aDeck.size());
 
+        System.out.println(aDeck);
+        aDeck.shuffle();
+        System.out.println();
+        System.out.println(aDeck);
 
-        System.out.println(aDeck.deal());
+
+        //System.out.println(aDeck.deal());
 
     }
 }

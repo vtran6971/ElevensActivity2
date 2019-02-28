@@ -14,8 +14,7 @@ public class Deck {
     /**
      * cards contains all the cards in the deck.
      */
-    private List<Card> cards;
-    ArrayList<Card> aDeck = new ArrayList<Card>();
+    private List<Card> cards = new ArrayList<Card>();
 
     /**
      * size is the number of not-yet-dealt cards.
@@ -42,7 +41,7 @@ public class Deck {
             for(int j = 0; j < ranks.length; j++)
             {
                 Card cardd = new Card(ranks[j], suits[i], values[j]);
-                aDeck.add(cardd);
+                cards.add(cardd);
             }
         }
     }
@@ -56,7 +55,7 @@ public class Deck {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
         boolean bool = false;
 
-        if (aDeck.size() == 0)
+        if (cards.size() == 0)
         {
             bool = true;
         }
@@ -70,8 +69,8 @@ public class Deck {
      */
     public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-        int number = aDeck.size();
-        return number;
+        size = cards.size();
+        return size;
     }
 
     /**
@@ -80,9 +79,16 @@ public class Deck {
      */
     public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-        for(int i = 0; i < aDeck.size(); i++)
-        {
+        int randomIndex;
+        Card cardHolder;
 
+        //Iterates through the list swapping the each index's element with another random index's element
+       for(int i = 0; i < size; i++)
+        {
+         randomIndex = (int)(Math.random()*(size));
+         cardHolder = cards.get(i);
+         cards.add(i, cards.get(randomIndex));
+         cards.add(randomIndex, cardHolder);
         }
     }
 
@@ -93,7 +99,7 @@ public class Deck {
      */
     public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-        Card aCard = aDeck.get(size-1);
+        Card aCard = cards.get(size-1);
         size--;
         return aCard;
     }
