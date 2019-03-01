@@ -20,11 +20,9 @@ public class DeckTester {
 
         System.out.println(aDeck);
         aDeck.shuffle();
+        System.out.println(aDeck.deal());
         System.out.println();
         System.out.println(aDeck);
-
-
-        //System.out.println(aDeck.deal());
 
     }
 }

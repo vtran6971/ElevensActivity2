@@ -87,8 +87,8 @@ public class Deck {
         {
          randomIndex = (int)(Math.random()*(size));
          cardHolder = cards.get(i);
-         cards.add(i, cards.get(randomIndex));
-         cards.add(randomIndex, cardHolder);
+         cards.set(i, cards.get(randomIndex));
+         cards.set(randomIndex, cardHolder);
         }
     }
 
